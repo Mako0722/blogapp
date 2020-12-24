@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'articles#index'
 
   resources :articles do
-  resources :comments, only: [:new, :create]
+    resources :comments, only: [:new, :create]
   end
+
+  resource :profile, only: [:show, :edit, :update]
 end
