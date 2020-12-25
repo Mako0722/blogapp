@@ -29,8 +29,11 @@ class User < ApplicationRecord
     articles.exists?(id: article.id)
   end
 
-  
   def display_name
     self.email.split('@').first
+  end
+
+  def prepare_profile
+    profile || build_profile
   end
 end
